@@ -44,3 +44,5 @@ p_normal
 
 p_empirical <- mean(paydata2017$Pay > 100000)
 p_empirical
+
+#Opgave4.
