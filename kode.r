@@ -35,3 +35,12 @@ sd_log <- sd(paydata2017$LogPay)
 
 f_log <- function(x) dnorm(x, mean = mean_log, sd = sd_log)
 curve(f_log, add = TRUE, col = "red")
+
+#Opgave3.
+x <- log(100000)
+
+p_normal <- 1 - pnorm(x, mean = mean_log, sd   = sd_log)
+p_normal
+
+p_empirical <- mean(paydata2017$Pay > 100000)
+p_empirical
