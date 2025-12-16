@@ -80,6 +80,12 @@ cat("4: exp(μ + σ^2/2) =", funktion4,
 cat("5: exp(μ + σ) =", funktion5,
     "   Forskel:", funktion5 - empirisk_mean, "\n")
 
+# Opgave 8
+mu <- 11.2
+sigma <- 0.353
+
+mean_estimate <- exp(mu + sigma^2 / 2)
+mean_estimate
 
 
 
