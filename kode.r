@@ -47,7 +47,6 @@ p_normal
 p_empirical <- mean(paydata2017$Pay > 100000)
 p_empirical
 
-#Opgave4.
 
 #Opgave7
 
@@ -86,10 +85,6 @@ sigma <- 0.353
 
 mean_estimate <- exp(mu + sigma^2 / 2)
 mean_estimate
-
-
-
-
 
 # Opgave 9
 qqnorm(paydata2017$Pay)
