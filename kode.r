@@ -67,7 +67,7 @@ funktion4 <- exp(my + (sigma^2) / 2)
 funktion5 <- exp(my + sigma)
 
 #Teoretiske mean
-empirisk_mean <- mean(resultat)
+empirisk_mean <- mean(samling)
 
 cat("1: exp(μ) =", funktion1,
     "   Forskel:", funktion1 - empirisk_mean, "\n")
@@ -79,3 +79,12 @@ cat("4: exp(μ + σ^2/2) =", funktion4,
     "   Forskel:", funktion4 - empirisk_mean, "\n")
 cat("5: exp(μ + σ) =", funktion5,
     "   Forskel:", funktion5 - empirisk_mean, "\n")
+
+
+
+
+
+
+# Opgave 9
+qqnorm(paydata2017$Pay)
+qqnorm(paydata2017$LogPay)
