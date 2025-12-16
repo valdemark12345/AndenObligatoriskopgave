@@ -66,6 +66,7 @@ funktion4 <- exp(my + (sigma^2) / 2)
 funktion5 <- exp(my + sigma)
 
 #Teoretiske mean
+samling <- exp(samling)
 empirisk_mean <- mean(samling)
 
 cat("1: exp(μ) =", funktion1,
