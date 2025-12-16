@@ -1,7 +1,7 @@
 #Handout
 getwd()
 setwd("AndenObligatoriskopgave")
-paydata2017 <- read.table("paydata2017.txt", header=TRUE)
+paydata2017 <- read.table("paydata2017.txt", header = TRUE)
 
 #Opgave1.
 paydata2017 <- transform(paydata2017, LogPay = log(Pay))
@@ -28,8 +28,9 @@ sd_pay <- sd(paydata2017$Pay)
 f_pay <- function(x) dnorm(x, mean = mean_pay, sd = sd_pay)
 curve(f_pay, add = TRUE, col = "red")
 
-##LogPay
-hist(paydata2017$LogPay, prob = TRUE, main = "Histogram af LogPay", xlab = "LogPay")
+# LogPay
+hist(paydata2017$LogPay, prob = TRUE, main = "Histogram af LogPay",
+     xlab = "LogPay")
 
 mean_log <- mean(paydata2017$LogPay)
 sd_log <- sd(paydata2017$LogPay)
@@ -37,7 +38,7 @@ sd_log <- sd(paydata2017$LogPay)
 f_log <- function(x) dnorm(x, mean = mean_log, sd = sd_log)
 curve(f_log, add = TRUE, col = "red")
 
-#Opgave3.
+# Opgave3.
 x <- log(100000)
 
 p_normal <- 1 - pnorm(x, mean = mean_log, sd  = sd_log)
@@ -50,31 +51,31 @@ p_empirical
 
 #Opgave7
 
-#Først laver man X 
+#Først laver man X
 samling <- rnorm(100000, 0, 1.5)
 
 #Parametre for X
-my <- mean(samling)      
-sigma <- sd(samling)     
+my <- mean(samling)
+sigma <- sd(samling)
 
 
 #De forskellige estimater
 funktion1 <- exp(my)
-funktion2 <- exp(my - sigma^2) 
-funktion3 <- exp(my + sigma^2)  
-funktion4 <- exp(my + (sigma^2)/2)  
-funktion5 <- exp(my + sigma) 
+funktion2 <- exp(my - sigma^2)
+funktion3 <- exp(my + sigma^2)
+funktion4 <- exp(my + (sigma^2) / 2)
+funktion5 <- exp(my + sigma)
 
 #Teoretiske mean
 empirisk_mean <- mean(resultat)
 
-cat("1: exp(μ) =", funktion1, 
+cat("1: exp(μ) =", funktion1,
     "   Forskel:", funktion1 - empirisk_mean, "\n")
-cat("2: exp(μ - σ^2) =", funktion2, 
+cat("2: exp(μ - σ^2) =", funktion2,
     "   Forskel:", funktion2 - empirisk_mean, "\n")
-cat("3: exp(μ + σ^2) =", funktion3, 
+cat("3: exp(μ + σ^2) =", funktion3,
     "   Forskel:", funktion3 - empirisk_mean, "\n")
-cat("4: exp(μ + σ^2/2) =", funktion4, 
+cat("4: exp(μ + σ^2/2) =", funktion4,
     "   Forskel:", funktion4 - empirisk_mean, "\n")
-cat("5: exp(μ + σ) =", funktion5, 
+cat("5: exp(μ + σ) =", funktion5,
     "   Forskel:", funktion5 - empirisk_mean, "\n")
