@@ -1,5 +1,6 @@
 #Handout
 getwd()
+setwd("AndenObligatoriskopgave")
 paydata2017 <- read.table("paydata2017.txt", header=TRUE)
 
 #Opgave1.
@@ -39,10 +40,41 @@ curve(f_log, add = TRUE, col = "red")
 #Opgave3.
 x <- log(100000)
 
-p_normal <- 1 - pnorm(x, mean = mean_log, sd   = sd_log)
+p_normal <- 1 - pnorm(x, mean = mean_log, sd  = sd_log)
 p_normal
 
 p_empirical <- mean(paydata2017$Pay > 100000)
 p_empirical
 
 #Opgave4.
+
+#Opgave7
+
+#Først laver man X 
+samling <- rnorm(100000, 0, 1.5)
+
+#Parametre for X
+my <- mean(samling)      
+sigma <- sd(samling)     
+
+
+#De forskellige estimater
+funktion1 <- exp(my)
+funktion2 <- exp(my - sigma^2) 
+funktion3 <- exp(my + sigma^2)  
+funktion4 <- exp(my + (sigma^2)/2)  
+funktion5 <- exp(my + sigma) 
+
+#Teoretiske mean
+empirisk_mean <- mean(resultat)
+
+cat("1: exp(μ) =", funktion1, 
+    "   Forskel:", funktion1 - empirisk_mean, "\n")
+cat("2: exp(μ - σ^2) =", funktion2, 
+    "   Forskel:", funktion2 - empirisk_mean, "\n")
+cat("3: exp(μ + σ^2) =", funktion3, 
+    "   Forskel:", funktion3 - empirisk_mean, "\n")
+cat("4: exp(μ + σ^2/2) =", funktion4, 
+    "   Forskel:", funktion4 - empirisk_mean, "\n")
+cat("5: exp(μ + σ) =", funktion5, 
+    "   Forskel:", funktion5 - empirisk_mean, "\n")
